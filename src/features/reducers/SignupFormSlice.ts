@@ -48,7 +48,6 @@ const SignupFormSlice = createSlice({
     name: "SignupForm",
     initialState,
     reducers: {
-
         reset: () => {
             return initialState
         }

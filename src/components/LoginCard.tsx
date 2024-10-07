@@ -80,7 +80,7 @@ export default function LoginCard({ onToggle, onForgetPassword }: LoginCardProps
                         endAdornment: (
                             <InputAdornment position="end">
                                 <IconButton
-                                    onClick={() => dispatch(toggleShowPassword())} // Dispatch the toggle action
+                                    onClick={() => dispatch(toggleShowPassword())} 
                                     edge="end"
                                     aria-label="toggle password visibility"
                                 >
@@ -90,6 +90,7 @@ export default function LoginCard({ onToggle, onForgetPassword }: LoginCardProps
                         ),
                     }}
                 />
+                
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: 2 }}>
                     <Link href="#" variant="body2" onClick={onForgetPassword}>
                         Forgot password?
@@ -104,12 +105,12 @@ export default function LoginCard({ onToggle, onForgetPassword }: LoginCardProps
                             <CircularProgress
                                 size={24}
                                 sx={{
-                                    color: 'white',  // Color for better visibility
+                                    color: 'white', 
                                     position: 'absolute',
                                     top: '50%',
                                     left: '50%',
-                                    marginTop: '-12px',  // Center the spinner vertically
-                                    marginLeft: '-12px',  // Center the spinner horizontally
+                                    marginTop: '-12px', 
+                                    marginLeft: '-12px', 
                                 }}
                             />
                         )}

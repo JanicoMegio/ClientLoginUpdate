@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Footer from './components/Footer.tsx';
 import PageNotFound from './components/Page404.tsx'
 import theme from './components/Theme.ts'
+import Dashboard from './components/MainDashboard.tsx';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/Dashboard" element={<Dashboard />}/>
         </Routes>
         <Footer/>
       </Router>

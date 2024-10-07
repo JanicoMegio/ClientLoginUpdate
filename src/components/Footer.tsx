@@ -20,6 +20,8 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 
 
 
@@ -40,10 +42,10 @@ export default function Footer() {
                         <Typography variant='h6'>Advisory:</Typography>
                         <br />
                         <Typography style={{ flexGrow: 1 }}>
-                            Welcome to Asialink Finance Corporation’s portal. By accessing this website, you agree to be governed by the <span style={{ fontWeight: 'bold'}}>Terms and Conditions</span>  and <span style={{ fontWeight: 'bold'}}> Data Privacy Policy </span>herein set forth. If you find the <span style={{ fontWeight: 'bold' }}>Terms and Conditions</span> and <span style={{ fontWeight: 'bold'}}>Data Privacy Policy</span> unacceptable, kindly discontinue accessing this website. We advise you to study the<span style={{ fontWeight: 'bold'}}> Terms and Conditions</span> in the disclosure statements before proceeding with the loan transaction.
+                            Welcome to Asialink Finance Corporation’s portal. By accessing this website, you agree to be governed by the <span style={{ fontWeight: 'bold' }}>Terms and Conditions</span>  and <span style={{ fontWeight: 'bold' }}> Data Privacy Policy </span>herein set forth. If you find the <span style={{ fontWeight: 'bold' }}>Terms and Conditions</span> and <span style={{ fontWeight: 'bold' }}>Data Privacy Policy</span> unacceptable, kindly discontinue accessing this website. We advise you to study the<span style={{ fontWeight: 'bold' }}> Terms and Conditions</span> in the disclosure statements before proceeding with the loan transaction.
                         </Typography>
                     </Grid>
-                  
+
                     <Grid item xs={12} md={4} lg={4} sx={{ textAlign: 'center' }}>
                         <img src={DPO} style={{ maxWidth: '125px', maxHeight: '250px', width: '100%', height: '100%' }} alt="DPO Logo" />
                     </Grid>
@@ -56,7 +58,7 @@ export default function Footer() {
                     </Grid>
                     <Grid item xs={12} sm={6} md={6} lg={4}>
                         <Box sx={{ bgcolor: '#00237D', textAlign: 'center', height: '150px', mx: 2, mt: 4 }}>
-                            <img src={Logo} style={{ maxHeight: '135px',maxWidth: '300px', width: '100%', height: '100%', padding: '20px' }} alt="Company Logo" />
+                            <img src={Logo} style={{ maxHeight: '135px', maxWidth: '300px', width: '100%', height: '100%', padding: '20px' }} alt="Company Logo" />
                         </Box>
                         <Grid
                             container
@@ -79,69 +81,83 @@ export default function Footer() {
                         <Grid item xs={6}>
                             <List>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Terms and Conditions</Typography>
+                                    <Link href="" underline='hover'> {'Terms and Conditions'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Privacy Policy</Typography>
+                                    <Link href="" underline='hover'>{'Privacy Policy'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Load Products</Typography>
+                                    <Link href="" underline='hover'>{'Load Products'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Branches</Typography>
+
+                                    <Link href="" underline='hover'>{'Branches'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Payment Options</Typography>
+
+                                    <Link href="" underline='hover'>{'Payment Options'}</Link>
                                 </ListItem>
                             </List>
                         </Grid>
                         <Grid item xs={6}>
                             <List>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Terms and Conditions</Typography>
+
+                                    <Link href="" underline='hover'>{'News & Events'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Privacy Policy</Typography>
+
+                                    <Link href="" underline='hover'>{'Career'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Load Products</Typography>
+                                    <Link href="" underline='hover'>{'FAQs'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Branches</Typography>
+
+                                    <Link href="" underline='hover'>{'Download Forms'}</Link>
                                 </ListItem>
                                 <ListItem sx={{ paddingBottom: "0px" }}>
-                                    <Typography>Payment Options</Typography>
+                                    <Link href="" underline='hover'>{'Our Blog'}</Link>
                                 </ListItem>
                             </List>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} lg={4}>
-                        <List sx={{ alignItems: 'center' }}>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar sx={{ bgcolor: '#00237D' }}>
-                                        < LocationOnIcon />
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary="210 AIC Gold Tower, F. Ortigas Jr. Rd., Ortigas Center, Pasig City 1600, Philippines " />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar sx={{ bgcolor: '#00237D' }}>
-                                        <CallIcon />
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary="8706-5198" />
-                            </ListItem>
-                            <ListItem >
-                                <ListItemAvatar >
-                                    <Avatar sx={{ bgcolor: '#00237D' }}>
-                                        < EmailIcon />
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary="customerservice&#8203;@asialinkfinance.com.ph" />
-                            </ListItem>
-                        </List>
+                    <Grid item xs={12} sm={12} lg={4}>
+                        <Stack
+                            direction={{ xs: 'column', md: 'row' }} // Stack vertically on smaller screens, horizontally on medium and larger
+                            spacing={2} // Space between items
+                            sx={{
+                                alignItems: { xs: 'flex-start', md: 'center' }, // Left align on small screens, center on medium and larger
+                                justifyContent: { xs: 'flex-start', md: 'center' }, // No centering on small screens, center on medium and larger
+                            }}
+                        >
+                            <List sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'center', lg: 'column' } }}>
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Avatar sx={{ bgcolor: '#00237D' }}>
+                                            < LocationOnIcon />
+                                        </Avatar>
+                                    </ListItemAvatar>
+                                    <ListItemText primary="210 AIC Gold Tower, F. Ortigas Jr. Rd., Ortigas Center, Pasig City 1600, Philippines " />
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Avatar sx={{ bgcolor: '#00237D' }}>
+                                            <CallIcon />
+                                        </Avatar>
+                                    </ListItemAvatar>
+                                    <ListItemText primary="8706-5198" />
+                                </ListItem>
+                                <ListItem >
+                                    <ListItemAvatar >
+                                        <Avatar sx={{ bgcolor: '#00237D' }}>
+                                            < EmailIcon />
+                                        </Avatar>
+                                    </ListItemAvatar>
+                                    <ListItemText primary="customerservice&#8203;@asialinkfinance.com.ph" />
+                                </ListItem>
+                            </List>
+                            </Stack>
                     </Grid>
                 </Grid>
             </Container>
