@@ -34,6 +34,7 @@ export default function Main() {
                     minHeight: '70vh',
                     paddingBottom: '30px',
                     paddingTop: '20px',
+                    
                 }}
             >
                 <Grid container justifyContent="center" alignItems="center" sx={{ flexGrow: 1 }}>

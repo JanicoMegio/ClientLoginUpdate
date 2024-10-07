@@ -25,11 +25,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ boxShadow: 'none'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant='h4' sx={{ color: '#ffffff'}}>Hi Lorem Ipsum!</Typography>
+            <Typography variant='h4' sx={{ color: '#ffffff'}}>Hi, Lorem Ipsum!</Typography>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
