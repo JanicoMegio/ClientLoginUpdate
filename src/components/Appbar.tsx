@@ -9,7 +9,7 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+//import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
 const settings = ['Account', 'Logout'];
 
@@ -29,7 +29,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant='h4' sx={{ color: '#ffffff'}}>Hi, Lorem Ipsum!</Typography>
+            <Typography variant='h4' sx={{ color: '#ffffff'}}>Hi, Jane Doe</Typography>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

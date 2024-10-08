@@ -12,7 +12,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import CustomIcons from '../components/Pagination'; 
 import CircularProgress from '@mui/material/CircularProgress'; 
 
-const cardData = Array(10).fill('').map((_, index) => ({
+const cardData = Array(30).fill('').map((_, index) => ({
     productType: '2nd Hand Car',
     accountNo: `12345678${index}`,
     loanAmount: '1,000,000 PHP',
@@ -22,10 +22,10 @@ const cardData = Array(10).fill('').map((_, index) => ({
 export default function Dashboard() {
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(false); 
-    const itemsPerPage = 4; 
+    const itemsPerPage = 4;
     const totalPages = Math.ceil(cardData.length / itemsPerPage);
 
-    
+   
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
@@ -33,11 +33,13 @@ export default function Dashboard() {
     const currentCards = cardData.slice(startIndex, endIndex);
 
     const handlePageChange = (page) => {
-        if (page !== currentPage) { 
+        if (page !== currentPage) {
+            setLoading(true); 
             setTimeout(() => {
                 setCurrentPage(page); 
                 setLoading(false); 
-            }, 1000); 
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 600); 
         }
     };
 
@@ -64,6 +66,7 @@ export default function Dashboard() {
                     mt: 4,
                 }}
             >
+               
                 <Typography
                     variant='h4'
                     sx={{
@@ -110,7 +113,13 @@ export default function Dashboard() {
                     }}
                 />
             </Box>
-
+            <Box>
+            <CustomIcons 
+                currentPage={currentPage} 
+                setCurrentPage={handlePageChange}
+                totalPages={totalPages} 
+            />
+            </Box>
             <Box
                 sx={{
                     width: '100%',
@@ -141,6 +150,7 @@ export default function Dashboard() {
                                 sx={{
                                     width: { xs: '90%', sm: '45%', md: '22%' },
                                     boxSizing: 'border-box',
+                                    border: '1px solid #000000',
                                     mb: 2,
                                     transition: 'transform 0.2s',
                                     '&:hover': {
@@ -185,12 +195,9 @@ export default function Dashboard() {
                     )}
                 </Stack>
             </Box>
-            
-            <CustomIcons 
-                currentPage={currentPage} 
-                setCurrentPage={handlePageChange} 
-                totalPages={totalPages} 
-            />
+
+           
+           
         </Container>
     );
 }
