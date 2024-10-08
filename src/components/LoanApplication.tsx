@@ -12,12 +12,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import CustomIcons from '../components/Pagination'; 
 import CircularProgress from '@mui/material/CircularProgress'; 
 
-const cardData = Array(30).fill('').map((_, index) => ({
+const cardData = Array(13).fill('').map((_, index) => ({
     productType: '2nd Hand Car',
     accountNo: `12345678${index}`,
     loanAmount: '1,000,000 PHP',
     balance: '500,000 PHP',
 }));
+
 
 export default function Dashboard() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -38,8 +39,9 @@ export default function Dashboard() {
             setTimeout(() => {
                 setCurrentPage(page); 
                 setLoading(false); 
+                console.log(cardData)
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 600); 
+            }, 350); 
         }
     };
 
@@ -55,54 +57,52 @@ export default function Dashboard() {
                 alignItems: 'center',
             }}
         >
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: { xs: 'column', sm: 'row' },
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    width: '100%',
-                    mb: 2,
-                    mt: 4,
-                }}
-            >
-               
-                <Typography
-                    variant='h4'
+           
+            <Container>
+                <Box
                     sx={{
-                        textAlign: 'start',
-                        width: { xs: '100%', sm: 'auto' },
-                        mb: { xs: 4, sm: 3 },
-                        ml: { xl: 5, md: 5, sm: 3, lg: 5 },
-                        mt: 2,
+                        display: 'flex',
+                        flexDirection: { xs: 'column', sm: 'row' },
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%',
+                        mb: 2,
+                        mt: 4,
                     }}
                 >
-                    My Loan Application
-                </Typography>
-                <Button
-                    variant='contained'
-                    sx={{
-                        width: { xs: '100%', sm: 'auto' },
-                        mr: { lg: 5, xl: 5, md: 5, sm: 3 },
-                    }}
-                >
-                    <Typography sx={{ fontWeight: 'bold' }}>Get Loan Today!</Typography>
-                </Button>
-            </Box>
+                
+                    <Typography
+                        variant='h4'
+                        sx={{
+                            textAlign: {md: 'start', xs: 'center'},
+                            width: { xs: '100%', sm: 'auto' },
+                            mb: { xs: 4, sm: 3 },
+                            ml: { xl: 5, md: 5, sm: 3, lg: 5 },
+                            mt: 2,
+                            fontSize: {xs: '1.5rem'}
+                        }}
+                    >
+                        My Loan Application
+                    </Typography>
+                    <Button
+                        variant='contained'
+                        sx={{
+                            width: { xs: '60%', sm: 'auto' },
+                            mr: { lg: 5, xl: 5, md: 5, sm: 3 },
 
+                        }}
+                    >
+                        <Typography sx={{ fontWeight: 'bold' }}>Get Loan Today!</Typography>
+                    </Button>
+            </Box>
+            </Container>
+            <Container>
             <Box
-                sx={{
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    mb: 3,
-                    mt: 2,
-                    pr: 5,
-                    mr: { lg: 4, xl: 4, md: 5, sm: 3 },
-                }}
+                sx={{ mx: 2 }}
             >
                 <TextField
                     type="search"
+                    fullWidth
                     placeholder="Search"
                     InputProps={{
                         startAdornment: (
@@ -113,14 +113,13 @@ export default function Dashboard() {
                     }}
                 />
             </Box>
-            <Box>
-            <CustomIcons 
-                currentPage={currentPage} 
-                setCurrentPage={handlePageChange}
-                totalPages={totalPages} 
-            />
-            </Box>
-            <Box
+            </Container>
+          
+            {cardData.length === 0 ? (
+                <Typography variant='h6' sx={{ textAlign: 'center', mb: 5,}}> No records found</Typography>
+            ): (
+                
+                <Box
                 sx={{
                     width: '100%',
                     display: 'flex',
@@ -151,7 +150,6 @@ export default function Dashboard() {
                                     width: { xs: '90%', sm: '45%', md: '22%' },
                                     boxSizing: 'border-box',
                                     border: '1px solid #000000',
-                                    mb: 2,
                                     transition: 'transform 0.2s',
                                     '&:hover': {
                                         transform: 'scale(1.05)',
@@ -194,6 +192,15 @@ export default function Dashboard() {
                         ))
                     )}
                 </Stack>
+            </Box>
+            )}
+              <Box>
+            <CustomIcons 
+                currentPage={currentPage} 
+                setCurrentPage={handlePageChange}
+                totalPages={totalPages} 
+                
+            />
             </Box>
 
            

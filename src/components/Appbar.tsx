@@ -25,7 +25,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ boxShadow: 'none'}}>
+    <AppBar position="static" sx={{ boxShadow: 'none', paddingTop: {xs: '30px'}}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1 }}>
