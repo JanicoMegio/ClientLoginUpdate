@@ -23,7 +23,7 @@ const cardData = Array(13).fill('').map((_, index) => ({
 export default function Dashboard() {
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(false); 
-    const itemsPerPage = 4;
+    const itemsPerPage = 3;
     const totalPages = Math.ceil(cardData.length / itemsPerPage);
 
    
@@ -55,6 +55,7 @@ export default function Dashboard() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
+                borderRadius: '11px'
             }}
         >
            
@@ -159,9 +160,9 @@ export default function Dashboard() {
                             >
                                 <CardContent sx={{ px: 1, py: 3 }}>
                                     <Box>
-                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                                        <Box sx={{ display: 'flex', mb: 1 }}>
                                             <Typography fontWeight="bold">Product type:</Typography>
-                                            <Typography>{card.productType}</Typography>
+                                            <Typography sx={{ fontSize: {md: '12px', xl: '16px'}}}>{card.productType}</Typography>
                                         </Box>
                                         <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                                             <Typography fontWeight="bold">Account No.:</Typography>
